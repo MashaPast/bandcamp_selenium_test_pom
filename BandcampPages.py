@@ -1,7 +1,7 @@
 from BaseApp import BasePage
 
 
-class Navigation(BasePage):
+class SearchPage(BasePage):
 
     def enter_word(self, word, locator):
         search_field = self.find_element(locator)
@@ -12,10 +12,13 @@ class Navigation(BasePage):
     def click_on_the_search_button(self, locator):
         return self.find_element(locator, time=2).click()
 
-    def check_navigation_bar(self, locator):
-        all_list = self.find_elements(locator, time=2)
-        nav_bar_menu = [x.text for x in all_list if len(x.text) > 0]
-        return nav_bar_menu
+    # def check_navigation_bar(self, locator):
+    #     all_list = self.find_elements(locator, time=2)
+    #     nav_bar_menu = [x.text for x in all_list if len(x.text) > 0]
+    #     return nav_bar_menu
+
+
+class SearchResultsPage(BasePage):
 
     def click_group(self, locator):
         return self.find_element(locator, time=2).click()
